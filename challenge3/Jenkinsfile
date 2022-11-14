@@ -3,14 +3,14 @@ pipeline{
     parameters{
         choice(choices: ["DEV", "QA", "PROD"], description: "Select Deployment name", name: "DeploymentName")
         choice(choices: ["EU-WEST-2A", "EU-WEST-2B", "EU-WEST-2C"], description: "Select which AZ?", name: "AZname")
-        booleanParam(defaultValue: false, description: "Confirm Deployment", name: "Confirm Deployment")
+        booleanParam(defaultValue: false, description: "Confirm Deployment", name: "ConfirmDeployment")
     }
     stages{
         stage(completed){
             steps{
                 echo "Deployment successfully done to: ${params:DeploymentName}"
-                echo "Regions successfully done to: ${params:DeploymentName}"
-                echo "confirmed successfully done to: ${params:DeploymentName}"
+                echo "Regions successfully done to: ${params:AZname}"
+                echo "confirmed successfully done to: ${params:ConfirmDeployment}"
             }
         }
     }
