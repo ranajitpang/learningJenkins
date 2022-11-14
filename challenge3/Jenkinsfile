@@ -1,8 +1,8 @@
 pipeline{
     agent any
     parameters{
-        choice(choices: {"DEV", "QA", "PROD"}, description: "Select Deployment name", name: "DeploymentName")
-        choice(choices: {"EU-WEST-2A", "EU-WEST-2B", "EU-WEST-2C"}, description: "Select which AZ?", name: "AZname")
+        choice(choices: ["DEV", "QA", "PROD"], description: "Select Deployment name", name: "DeploymentName")
+        choice(choices: ["EU-WEST-2A", "EU-WEST-2B", "EU-WEST-2C"], description: "Select which AZ?", name: "AZname")
         checkboxParameter(name: 'ConfirmDeployment', format: 'JSON', pipelineSubmitContent: '{"CheckboxParameter": [{"key": "Yes","value": "Yes"}, description: 'Select Confirmation checkbox to continue')
     }
     stages{
