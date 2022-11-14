@@ -7,7 +7,7 @@ pipeline{
     stages{
         stage(completed){
             steps{
-                echo "Deployment successfully done to: ${DeploymentName}"
+                echo "Deployment successfully done to: ${params:DeploymentName}"
             }
         }
     }
