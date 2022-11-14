@@ -1,0 +1,21 @@
+pipeline{
+    agent any
+    parameters{
+        booleanParam(defaultValue: false, description: '', name: "agree")
+    }
+    stages{
+        stage(Demo){
+            steps{
+                script{
+                    if(params.agree == false){
+                       echo "Build parameter is false"
+                       return
+                    }
+                    else{
+                        echo "Build parameter is TRUE"
+                    }
+            }
+        }
+    }
+    }
+}
