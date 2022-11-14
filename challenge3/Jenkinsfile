@@ -5,7 +5,7 @@ pipeline{
         choice(choices: ["EU-WEST-2A", "EU-WEST-2B", "EU-WEST-2C"], description: "Select which AZ?", name: "AZname")
     }
     stages{
-        Stage(completed){
+        stage(completed){
             steps{
                 echo "Deployment successfully done to: ${DeploymentName}"
             }
