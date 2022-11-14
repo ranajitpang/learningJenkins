@@ -8,9 +8,9 @@ pipeline{
     stages{
         stage(completed){
             steps{
-                echo "Deployment successfully done to: $(deploymentName)"
-                echo "Regions successfully done to: $(azName)"
-                echo "confirmed successfully done to: $(confirmDeployment)"
+                echo "Deployment successfully done to: ${deploymentName} \n"
+                echo "Regions successfully done to: ${azName} \n"
+                echo "confirmed successfully done to: ${confirmDeployment}"
             }
         }
     }
